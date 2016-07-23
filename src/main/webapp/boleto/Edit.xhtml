@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="BoletoEditDlg" widgetVar="BoletoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditBoletoTitle}">
+            <h:form id="BoletoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{boletoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditBoletoLabel_detalleCompra}" for="detalleCompra" />
+                        <p:inputText id="detalleCompra" value="#{boletoController.selected.detalleCompra}" title="#{bundle.EditBoletoTitle_detalleCompra}" required="true" requiredMessage="#{bundle.EditBoletoRequiredMessage_detalleCompra}"/>
+                        <p:outputLabel value="#{bundle.EditBoletoLabel_butacaId}" for="butacaId" />
+                        <p:inputText id="butacaId" value="#{boletoController.selected.butacaId}" title="#{bundle.EditBoletoTitle_butacaId}" />
+                        <p:outputLabel value="#{bundle.EditBoletoLabel_facturaId}" for="facturaId" />
+                        <p:inputText id="facturaId" value="#{boletoController.selected.facturaId}" title="#{bundle.EditBoletoTitle_facturaId}" />
+                        <p:outputLabel value="#{bundle.EditBoletoLabel_funcionId}" for="funcionId" />
+                        <p:inputText id="funcionId" value="#{boletoController.selected.funcionId}" title="#{bundle.EditBoletoTitle_funcionId}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{boletoController.update}" value="#{bundle.Save}" update="display,:BoletoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'BoletoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="BoletoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

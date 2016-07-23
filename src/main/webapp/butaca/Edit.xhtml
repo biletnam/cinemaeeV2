@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ButacaEditDlg" widgetVar="ButacaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditButacaTitle}">
+            <h:form id="ButacaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{butacaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditButacaLabel_butacaId}" for="butacaId" />
+                        <p:inputText id="butacaId" value="#{butacaController.selected.butacaId}" title="#{bundle.EditButacaTitle_butacaId}" required="true" requiredMessage="#{bundle.EditButacaRequiredMessage_butacaId}"/>
+                        <p:outputLabel value="#{bundle.EditButacaLabel_numButaca}" for="numButaca" />
+                        <p:inputText id="numButaca" value="#{butacaController.selected.numButaca}" title="#{bundle.EditButacaTitle_numButaca}" />
+                        <p:outputLabel value="#{bundle.EditButacaLabel_fila}" for="fila" />
+                        <p:inputText id="fila" value="#{butacaController.selected.fila}" title="#{bundle.EditButacaTitle_fila}" />
+                        <p:outputLabel value="#{bundle.EditButacaLabel_salaCineid}" for="salaCineid" />
+                        <p:inputText id="salaCineid" value="#{butacaController.selected.salaCineid}" title="#{bundle.EditButacaTitle_salaCineid}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{butacaController.update}" value="#{bundle.Save}" update="display,:ButacaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ButacaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ButacaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

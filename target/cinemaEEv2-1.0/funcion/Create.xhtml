@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FuncionCreateDlg" widgetVar="FuncionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateFuncionTitle}">
+            <h:form id="FuncionCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{funcionController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateFuncionLabel_funcionId}" for="funcionId" />
+                        <p:inputText id="funcionId" value="#{funcionController.selected.funcionId}" title="#{bundle.CreateFuncionTitle_funcionId}" required="true" requiredMessage="#{bundle.CreateFuncionRequiredMessage_funcionId}"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionLabel_hora}" for="hora" />
+                        <p:calendar id="hora" pattern="MM/dd/yyyy HH:mm:ss" value="#{funcionController.selected.hora}" title="#{bundle.EditFuncionTitle_hora}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateFuncionLabel_precio}" for="precio" />
+                        <p:inputText id="precio" value="#{funcionController.selected.precio}" title="#{bundle.CreateFuncionTitle_precio}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionLabel_salaCineid}" for="salaCineid" />
+                        <p:inputText id="salaCineid" value="#{funcionController.selected.salaCineid}" title="#{bundle.CreateFuncionTitle_salaCineid}" />
+                        <p:outputLabel value="#{bundle.CreateFuncionLabel_peliculaId}" for="peliculaId" />
+                        <p:inputText id="peliculaId" value="#{funcionController.selected.peliculaId}" title="#{bundle.CreateFuncionTitle_peliculaId}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{funcionController.create}" value="#{bundle.Save}" update="display,:FuncionListForm:datalist,:growl" oncomplete="handleSubmit(args,'FuncionCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FuncionCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PeliculaCreateDlg" widgetVar="PeliculaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePeliculaTitle}">
+            <h:form id="PeliculaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{peliculaController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_peliculaId}" for="peliculaId" />
+                        <p:inputText id="peliculaId" value="#{peliculaController.selected.peliculaId}" title="#{bundle.CreatePeliculaTitle_peliculaId}" required="true" requiredMessage="#{bundle.CreatePeliculaRequiredMessage_peliculaId}"/>
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{peliculaController.selected.nombre}" title="#{bundle.CreatePeliculaTitle_nombre}" />
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_duracion}" for="duracion" />
+                        <p:inputTextarea rows="4" cols="30" id="duracion" value="#{peliculaController.selected.duracion}" title="#{bundle.CreatePeliculaTitle_duracion}" />
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_sinopsis}" for="sinopsis" />
+                        <p:inputText id="sinopsis" value="#{peliculaController.selected.sinopsis}" title="#{bundle.CreatePeliculaTitle_sinopsis}" />
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_estreno}" for="estreno" />
+                        <p:inputText id="estreno" value="#{peliculaController.selected.estreno}" title="#{bundle.CreatePeliculaTitle_estreno}" />
+                        <p:outputLabel value="#{bundle.CreatePeliculaLabel_portada}" for="portada" />
+                        <p:inputText id="portada" value="#{peliculaController.selected.portada}" title="#{bundle.CreatePeliculaTitle_portada}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{peliculaController.create}" value="#{bundle.Save}" update="display,:PeliculaListForm:datalist,:growl" oncomplete="handleSubmit(args,'PeliculaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PeliculaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

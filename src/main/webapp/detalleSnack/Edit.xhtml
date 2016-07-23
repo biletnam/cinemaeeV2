@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DetalleSnackEditDlg" widgetVar="DetalleSnackEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditDetalleSnackTitle}">
+            <h:form id="DetalleSnackEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{detalleSnackController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditDetalleSnackLabel_detSnackid}" for="detSnackid" />
+                        <p:inputText id="detSnackid" value="#{detalleSnackController.selected.detSnackid}" title="#{bundle.EditDetalleSnackTitle_detSnackid}" required="true" requiredMessage="#{bundle.EditDetalleSnackRequiredMessage_detSnackid}"/>
+                        <p:outputLabel value="#{bundle.EditDetalleSnackLabel_snackId}" for="snackId" />
+                        <p:inputText id="snackId" value="#{detalleSnackController.selected.snackId}" title="#{bundle.EditDetalleSnackTitle_snackId}" />
+                        <p:outputLabel value="#{bundle.EditDetalleSnackLabel_facturaId}" for="facturaId" />
+                        <p:inputText id="facturaId" value="#{detalleSnackController.selected.facturaId}" title="#{bundle.EditDetalleSnackTitle_facturaId}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{detalleSnackController.update}" value="#{bundle.Save}" update="display,:DetalleSnackListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DetalleSnackEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DetalleSnackEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

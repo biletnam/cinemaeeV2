@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CineEditDlg" widgetVar="CineEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCineTitle}">
+            <h:form id="CineEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cineController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCineLabel_cineId}" for="cineId" />
+                        <p:inputText id="cineId" value="#{cineController.selected.cineId}" title="#{bundle.EditCineTitle_cineId}" required="true" requiredMessage="#{bundle.EditCineRequiredMessage_cineId}"/>
+                        <p:outputLabel value="#{bundle.EditCineLabel_cineName}" for="cineName" />
+                        <p:inputText id="cineName" value="#{cineController.selected.cineName}" title="#{bundle.EditCineTitle_cineName}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cineController.update}" value="#{bundle.Save}" update="display,:CineListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CineEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CineEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
