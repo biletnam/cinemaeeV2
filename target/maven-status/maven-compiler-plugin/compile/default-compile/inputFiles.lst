@@ -6,6 +6,7 @@
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/model/Snack.java
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/session/FacturaFacade.java
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/session/SnackFacade.java
+/home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/managedBeans/LoginBean.java
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/session/BoletoFacade.java
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/model/Funcion.java
 /home/edalx/NetBeansProjects/cinemaEEv2/src/main/java/com/edalx/model/SalaCine.java

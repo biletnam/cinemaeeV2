@@ -1,6 +1,7 @@
 com/edalx/model/Funcion_.class
 com/edalx/session/CineFacade.class
 com/edalx/view/SnackController$SnackControllerConverter.class
+com/edalx/managedBeans/LoginBean.class
 com/edalx/model/Factura.class
 com/edalx/model/Butaca_.class
 com/edalx/session/BoletoFacade.class

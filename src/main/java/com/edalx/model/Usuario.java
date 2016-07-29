@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "Usuario")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "Usuario.control", query = "SELECT u FROM Usuario u WHERE u.username = :username and u.password = :password" ),
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
     @NamedQuery(name = "Usuario.findByUsrId", query = "SELECT u FROM Usuario u WHERE u.usrId = :usrId"),
     @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre"),
@@ -68,6 +69,9 @@ public class Usuario implements Serializable {
     private String email;
     @Column(name = "admin")
     private Integer admin;
+    @Column(name="password")
+    @Size(max=45)
+    private String password;
 
     public Usuario() {
     }
@@ -147,6 +151,15 @@ public class Usuario implements Serializable {
     public void setAdmin(Integer admin) {
         this.admin = admin;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
 
     @Override
     public int hashCode() {
