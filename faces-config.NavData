@@ -4,25 +4,25 @@
     <Scope Scope="Project">
         <Node id="snack/Edit.xhtml" x="900" y="450" zoom="true"/>
         <Node id="salaCine/View.xhtml" x="150" y="1200" zoom="true"/>
-        <Node id="Inicio.jsp" x="1150" y="150" zoom="true"/>
         <Node id="factura/Edit.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="Inicio.jsp" x="1150" y="150" zoom="true"/>
         <Node id="cine/Create.xhtml" x="900" y="900" zoom="true"/>
         <Node id="factura/Create.xhtml" x="650" y="1050" zoom="true"/>
-        <Node id="welcomePrimefaces.xhtml" x="400" y="450" zoom="true"/>
         <Node id="salaCine/List.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="400" y="450" zoom="true"/>
         <Node id="usuario/List.xhtml" x="1150" y="600" zoom="true"/>
         <Node id="butaca/List.xhtml" x="1650" y="150" zoom="true"/>
         <Node id="factura/View.xhtml" x="1150" y="300" zoom="true"/>
         <Node id="butaca/View.xhtml" x="650" y="600" zoom="true"/>
         <Node id="usuario/View.xhtml" x="1900" y="150" zoom="true"/>
         <Node id="salaCine/Edit.xhtml" x="900" y="750" zoom="true"/>
-        <Node id="usuario/Create.xhtml" x="650" y="450" zoom="true"/>
         <Node id="funcion/Create.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="usuario/Create.xhtml" x="650" y="450" zoom="true"/>
         <Node id="factura/List.xhtml" x="1400" y="150" zoom="true"/>
         <Node id="boleto/View.xhtml" x="650" y="300" zoom="true"/>
         <Node id="boleto/Edit.xhtml" x="400" y="1050" zoom="true"/>
-        <Node id="funcion/List.xhtml" x="150" y="900" zoom="true"/>
         <Node id="butaca/Create.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="funcion/List.xhtml" x="150" y="900" zoom="true"/>
         <Node id="template.xhtml" x="150" y="300" zoom="true"/>
         <Node id="boleto/List.xhtml" x="150" y="450" zoom="true"/>
         <Node id="cine/Edit.xhtml" x="1650" y="450" zoom="true"/>
@@ -33,10 +33,10 @@
         <Node id="detalleSnack/View.xhtml" x="400" y="300" zoom="true"/>
         <Node id="funcion/View.xhtml" x="900" y="150" zoom="true"/>
         <Node id="usuario/Edit.xhtml" x="650" y="900" zoom="true"/>
-        <Node id="butaca/Edit.xhtml" x="1150" y="450" zoom="true"/>
         <Node id="detalleSnack/Edit.xhtml" x="400" y="750" zoom="true"/>
-        <Node id="snack/List.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="butaca/Edit.xhtml" x="1150" y="450" zoom="true"/>
         <Node id="cine/List.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="snack/List.xhtml" x="150" y="600" zoom="true"/>
         <Node id="pelicula/Edit.xhtml" x="900" y="600" zoom="true"/>
         <Node id="pelicula/View.xhtml" x="1400" y="300" zoom="true"/>
         <Node id="salaCine/Create.xhtml" x="1150" y="750" zoom="true"/>
