@@ -12,33 +12,38 @@
     </h:head>
 
     <h:body style= 'background: url(./images/Cinema.jpg); background-position: center, center;  background-repeat: no-repeat; background-size: cover;'>
-         <p:graphicImage  height="300" width="600" value="./images/snack.png" style="margin-left: -20; margin-top: 1" />   
-           <div style="width: 200px;height: 50px; float: right;margin: 20px">
-               <h:link value="Iniciar session" outcome="Login" style="width: 200px; font-size: 1.5em" />
-               <br/>
+        <p:graphicImage  height="300" width="600" value="./images/snack.png" style="margin-left: -20; margin-top: 1" />   
+        <div style="width: 200px;height: 50px; float: right;margin: 20px">
+            <h:link value="Iniciar session" outcome="Login" style="width: 200px; font-size: 1.5em" />
+            <br/>
             <h:link value="Registrarse" outcome="Login" style="width: 200px;font-size: 1.5em"/>
         </div>
-         <div style="width: 900px;height: 100px; float: right;margin: 20px; margin-top: 160px">
-             <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
-            
+        <div id="texto" style="width: 900px;height: 100px; float: right;margin: 20px; margin-top: 160px">
+            <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
+
         </div>
+        <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
+            <div id="menu" style=" float: left; margin:20px; background-color:  #00b386">
+                <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
+                    <p:menuitem value="Categories" url="#"/>
+                    <p:menuitem value="Home" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                    <p:menuitem value="Cartelera" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                    <p:menuitem value="Proximos estrenos" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
+                    <p:menuitem value="Snacks disponibles" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Quienes somos"     url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                </p:breadCrumb>
+            </div>
 
+            <div id="images" style="margin: center">
+                <h3>Fade</h3>
+                <p:imageSwitch effect="fade" id="fadeEffect">
+                    <ui:repeat value="hola" var="image" id="fadeEffectImages">
+                        <p:graphicImage name="./images/Cinema.jpg" id="image" />
+                    </ui:repeat>
+                </p:imageSwitch>
 
+            </div>
 
-
-        <!--
-
-          <br/>
-            <br/>
-            <br/>
-            <br/>
-        <p:breadCrumb style=" float: left; margin-top: 180px; margin-left: -550px">
-            <p:menuitem value="   Home    " url="#" style="width: 200px" icon="null" />
-            <p:menuitem value="   Cartelera   " url="#" style="width: 200px" icon="null"  />
-            <p:menuitem value="   Proximos estrenos   " url="#" style="width: 200px" icon="null" />
-            <p:menuitem value="   Snacks disponible   " url="#" style="width: 200px" icon="null" />
-            <p:menuitem value="   Quienes somos   "     url="#" style="width: 200px" icon="null" />
-        </p:breadCrumb>
--->
+        </div>
     </h:body>
 </html>
