@@ -15,35 +15,51 @@
     <h:body style= 'background: url(./images/Cinema.jpg); background-position: center, center;  background-repeat: no-repeat; background-size: cover;'>
         <p:graphicImage  height="300" width="600" value="./images/snack.png" style="margin-left: -20; margin-top: 1" />   
         <div style="width: 200px;height: 50px; float: right;margin: 20px">
-            <h:link value="Iniciar session" outcome="Login" style="width: 200px; font-size: 1.5em" />
+            
+            <h:link value="Iniciar sesion" outcome="Login" style="width: 200px; font-size: 1.5em" />
             <br/>
             <h:link value="Registrarse" outcome="Login" style="width: 200px;font-size: 1.5em"/>
+           
         </div>
         <div id="texto" style="width: 900px;height: 100px; float: right;margin: 20px; margin-top: 160px">
             <h:outputText value="Reserva tus boletos y snacks favoritos desde la comodidad de tu casa" style="font-size: 1.5em;width: 900px;height: 100px; color: white;font-weight: bold;font-style: oblique"></h:outputText>
 
         </div>
         <div id="pantalla" style="width: 90%; border: 20%;margin: auto">
-            <div id="menu" style=" float: left; margin:20px; background-color:  #00b386">
+            <div id="menu" style=" float: left; ;margin: auto; margin:20px; background-color:  #00b386">
                 <p:breadCrumb style=" background-color: #ffffe6; margin-top: 5px;">
                     <p:menuitem value="Categories" url="#"/>
-                    <p:menuitem value="Home" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
-                    <p:menuitem value="Cartelera" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
-                    <p:menuitem value="Proximos estrenos" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
-                    <p:menuitem value="Snacks disponibles" url="#" style="width: 220px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
-                    <p:menuitem value="Quienes somos"     url="#" style="width: 220px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
+                    <p:menuitem value="Home" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px"/>
+                    <p:menuitem value="Cartelera" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px  "   />
+                    <p:menuitem value="Proximos estrenos" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;;margin-top: 9px   " />
+                    <p:menuitem value="Snacks disponibles" url="#" style="width: 265px; text-align: center;color: #990033;height: 25px ;margin-top: 9px  "  />
+                    <p:menuitem value="Quienes somos"     url="#" style="width: 265px; text-align: center;color: #990033;height: 25px;margin-top: 9px   " />
                 </p:breadCrumb>
             </div>
 
-        
-               
-                <div style="float: left; width: 90%; margin: auto; margin-top: 20px"> 
+
+
+            <div style="float: left; width: 90%; margin: auto; margin-top: 20px"> 
                 <p:imageSwitch effect="fade" id="fadeEffect" style=" margin:0 auto 0 auto;background-color: #808080">
                     <ui:repeat value="#{imagesView.images}" var="image" id="fadeEffectImages" >
-                        <p:graphicImage library="peliculas" name="#{image}" id="image" style="width: 670px; height: 370px; margin: 10px" />
+                        <p:graphicImage library="images/presentacion" name="#{image}" id="image" style="width: 670px; height: 370px; margin: 10px" />
                     </ui:repeat>
                 </p:imageSwitch>
-                </div>
+            </div>
+
+            <h3 style="float: left;width: 85%;height: 50px;font-size: 1.5em; color: white;font-weight: bold;margin-top: 50px; margin-left: 55px; font-style: oblique"> BIENVENIDO/A A LA CADENA DE CINE MAS GRANDE Y MODERNA DE TODO EL PAIS</h3>
+
+            <div id="peliculas" style="float: left; width: 90%; border: 10px;margin: auto">
+                <h:graphicImage library="images/peliculas" name="Cart_430.jpg" style="border: 10px;float: left;padding: 10px;background-color:#e39c0c;margin: 30px;margin-left: 55px; "/>
+                <h:graphicImage library="images/peliculas" name="Cart_431.jpg" style="border: 10px;float: left;padding: 10px;background-color:#00cc00;margin: 30px "/>
+                <h:graphicImage library="images/peliculas" name="Cart_538.jpg" style="border: 10px;float: left;padding: 10px;background-color:#990033;margin: 30px "/>
+                <h:graphicImage library="images/peliculas" name="Cart_539.jpg" style="border: 10px;float: left;padding: 10px;background-color:#e39c0c;margin: 30px "/>
+                <h:graphicImage library="images/peliculas" name="Cart_565.jpg" style="border: 10px;float: left;padding: 10px;background-color:#00cc00;margin: 30px;margin-left: 55px "/>
+                <h:graphicImage library="images/peliculas" name="Cart_569.jpg" style="border: 10px;float: left;padding: 10px;background-color:#990033;margin: 30px;"/>
+                <h:graphicImage library="images/peliculas" name="Cart_571.jpg" style="border: 10px;float: left;padding: 10px;background-color:#e39c0c;margin: 30px;"/>
+                <h:graphicImage library="images/peliculas" name="Cart_579.jpg" style="border: 10px;float: left;padding: 10px;background-color:#00cc00;margin: 30px;"/>
+
+            </div>
         </div>
     </h:body>
 </html>
