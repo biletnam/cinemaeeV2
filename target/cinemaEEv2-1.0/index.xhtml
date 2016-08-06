@@ -9,6 +9,7 @@
         <title>CinemaEE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+        <link href="./images"/>
     </h:head>
 
     <h:body style= 'background: url(./images/Cinema.jpg); background-position: center, center;  background-repeat: no-repeat; background-size: cover;'>
@@ -34,16 +35,15 @@
                 </p:breadCrumb>
             </div>
 
-            <div id="images" style="margin: center">
-                <h3>Fade</h3>
-                <p:imageSwitch effect="fade" id="fadeEffect">
-                    <ui:repeat value="hola" var="image" id="fadeEffectImages">
-                        <p:graphicImage name="./images/Cinema.jpg" id="image" />
+        
+               
+                <div style="float: left; width: 90%; margin: auto; margin-top: 20px"> 
+                <p:imageSwitch effect="fade" id="fadeEffect" style=" margin:0 auto 0 auto;background-color: #808080">
+                    <ui:repeat value="#{imagesView.images}" var="image" id="fadeEffectImages" >
+                        <p:graphicImage library="peliculas" name="#{image}" id="image" style="width: 670px; height: 370px; margin: 10px" />
                     </ui:repeat>
                 </p:imageSwitch>
-
-            </div>
-
+                </div>
         </div>
     </h:body>
 </html>

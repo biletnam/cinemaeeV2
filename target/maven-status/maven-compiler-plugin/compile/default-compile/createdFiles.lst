@@ -25,6 +25,7 @@ com/edalx/session/DetalleSnackFacade.class
 com/edalx/model/DetalleSnack_.class
 com/edalx/model/Usuario_.class
 com/edalx/model/Snack_.class
+com/edalx/managedBeans/imagesView.class
 com/edalx/session/FuncionFacade.class
 com/edalx/session/ButacaFacade.class
 com/edalx/view/util/JsfUtil.class
